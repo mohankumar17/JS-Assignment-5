@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Billing</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Raleway&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="d-flex flex-row mb-2 justify-content-between align-items-start">
+        <div class="p-3" id="tables">
+            <h5>Tables</h5>
+
+            <input id="searchbar-table" onkeyup="search_table()" type="text" name="search" placeholder="Search tables"
+                class="table-search">
+
+            <br><br>
+            <div id="drop" class="table-body" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div class="table table-1">
+                    <h6 class="t1-drop tm-heading">Table - 1</h6>
+                    <span class="t1-drop cost">Rs.0</span>
+                    <span> | </span>
+                    <span class="t1-drop tot-items">Total Items: 0</span>
+
+                </div>
+                <br>
+                <div class="table table-2">
+                    <h6 class="t2-drop tm-heading">Table - 2</h6>
+                    <span class="t2-drop cost">Rs.0</span>
+                    <span> | </span>
+                    <span class="t2-drop tot-items">Total Items: 0</span>
+
+                </div>
+                <br>
+                <div class="table table-3">
+                    <h6 class="t3-drop tm-heading">Table - 3</h6>
+                    <span class="t3-drop cost">Rs.0</span>
+                    <span> | </span>
+                    <span class="t3-drop tot-items">Total Items: 0</span>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="p-3" id="menu">
+            <h5>Menu</h5>
+            <input id="searchbar-menu" onkeyup="search_item()" type="text" name="search"
+                placeholder="Search course ..by course ..by food" class="menu-search">
+
+            <br><br>
+            <div id="drag" class="menu-body">
+                <div class="item item-1" draggable="true" ondragstart="drag(event)">
+                    <h6 class="tm-heading">Paneer Biriyani</h6>
+                    <p>Rs. 240.0</p>
+                </div>
+                <br>
+                <div class="item item-2" draggable="true" ondragstart="drag(event)">
+                    <h6 class="tm-heading">Chicken Biriyani</h6>
+                    <p>Rs. 350.0</p>
+                </div>
+                <br>
+                <div class="item item-3" draggable="true" ondragstart="drag(event)">
+                    <h6 class="tm-heading">Paneer Pizza</h6>
+                    <p>Rs. 170.0</p>
+                </div>
+                <br>
+                <div class="item item-4" draggable="true" ondragstart="drag(event)">
+                    <h6 class="tm-heading">Chicken Pizza</h6>
+                    <p>Rs. 290.0</p>
+                </div>
+                <br>
+                <div class="item item-5" draggable="true" ondragstart="drag(event)">
+                    <h6 class="tm-heading">Chicken Pizza with Extra Cheese</h6>
+                    <p>Rs. 320.0</p>
+                </div>
+                <br>
+                <div class="item item-6" draggable="true" ondragstart="drag(event)">
+                    <h6 class="tm-heading">Chicken Burger</h6>
+                    <p>Rs. 220.0</p>
+                </div>
+                <br>
+                <div class="item item-7" draggable="true" ondragstart="drag(event)">
+                    <h6 class="tm-heading">Veg Burger</h6>
+                    <p>Rs. 175.0</p>
+                </div>
+                <br>
+                <div class="item item-8" draggable="true" ondragstart="drag(event)">
+                    <h6 class="tm-heading">Mutton Curry</h6>
+                    <p>Rs. 150.0</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="index.js"></script>
+</body>
+
+</html>

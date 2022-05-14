@@ -1,0 +1,29 @@
+body{
+    box-sizing: border-box;
+}
+
+#tables{
+    width: 20%;
+}
+
+#menu{
+    width: 80%;
+    border-left: 3px solid black;
+}
+
+.table-search{
+    width: 80%;
+}
+
+.table,.item{
+    border: solid grey;
+    border-width: 0 0 2px 0;
+}
+
+.menu-search{
+    width: 70%;
+}
+
+.tm-heading{
+    font-size: 20px;
+}
