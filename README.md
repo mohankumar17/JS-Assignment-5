@@ -7,3 +7,6 @@ Restaurant Billing System
 4. Provision to change the quantity of the item(s).
 5. Provision to delete an item/items.
 6. Generate bill for each table.
+
+# GitHib Pages URL
+This project is hosted on GitHub pages. Please check the following URL: https://mohankumar17.github.io/JS-Assignment-5/
