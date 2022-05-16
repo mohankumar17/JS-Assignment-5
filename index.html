@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurant Billing</title>
 
+    <link rel="shortcut icon" href="images/restaurant.png" type="/x-icon">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Raleway&display=swap" rel="stylesheet">
@@ -33,12 +35,13 @@
         <div class="p-3" id="tables">
             <h5>Tables</h5>
 
-            <input id="searchbar-table" onkeyup="search_table()" type="text" name="search" placeholder="Search tables"
-                class="table-search">
+            <input id="searchbar-table" onkeyup="search_table()" type="text" name="search"
+                placeholder="Search tables..." class="table-search">
 
             <br><br>
-            <div id="drop" class="table-body" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <div class="table table-1">
+            <div id="drop" class="table-body" ondrop="drop(event)" ondragover="allowDrop(event)"
+                onclick="showModal(event)">
+                <div class="t1-drop table table-1">
                     <h6 class="t1-drop tm-heading">Table - 1</h6>
                     <span class="t1-drop cost">Rs.0</span>
                     <span> | </span>
@@ -46,7 +49,7 @@
 
                 </div>
                 <br>
-                <div class="table table-2">
+                <div class="t2-drop table table-2">
                     <h6 class="t2-drop tm-heading">Table - 2</h6>
                     <span class="t2-drop cost">Rs.0</span>
                     <span> | </span>
@@ -54,7 +57,7 @@
 
                 </div>
                 <br>
-                <div class="table table-3">
+                <div class="t3-drop table table-3">
                     <h6 class="t3-drop tm-heading">Table - 3</h6>
                     <span class="t3-drop cost">Rs.0</span>
                     <span> | </span>
@@ -67,8 +70,8 @@
 
         <div class="p-3" id="menu">
             <h5>Menu</h5>
-            <input id="searchbar-menu" onkeyup="search_item()" type="text" name="search"
-                placeholder="Search course ..by course ..by food" class="menu-search">
+            <input id="searchbar-menu" onkeyup="search_item()" type="text" name="search" placeholder="Search items..."
+                class="menu-search">
 
             <br><br>
             <div id="drag" class="menu-body">
@@ -114,6 +117,53 @@
             </div>
 
         </div>
+
+        <!-- Modal (Pop-Up Card) -->
+        <!-- Button trigger modal -->
+        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+            Launch
+        </button> -->
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Table - <span class="table-num">0</span> |
+                            Order Details</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                            onclick="removeTableHighlight()">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">S.No</th>
+                                    <th scope="col">Item</th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">No.of.Servings</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Add HTML for listing the items of table -->
+                            </tbody>
+                        </table>
+
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <!-- <button type="button" class="bill-gen btn btn-secondary">Generate Bill</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </div>
 
 
