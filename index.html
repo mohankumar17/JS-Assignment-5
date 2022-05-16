@@ -33,7 +33,9 @@
 
     <div class="d-flex flex-row mb-2 justify-content-between align-items-start">
         <div class="p-3" id="tables">
-            <h5>Tables</h5>
+            <div class="center-heading">
+                <h5>Tables</h5>
+            </div>
 
             <input id="searchbar-table" onkeyup="search_table()" type="text" name="search"
                 placeholder="Search tables..." class="table-search">
@@ -41,7 +43,7 @@
             <br><br>
             <div id="drop" class="table-body" ondrop="drop(event)" ondragover="allowDrop(event)"
                 onclick="showModal(event)">
-                <div class="t1-drop table table-1">
+                <div class="t1-drop tableR table-1">
                     <h6 class="t1-drop tm-heading">Table - 1</h6>
                     <span class="t1-drop cost">Rs.0</span>
                     <span> | </span>
@@ -49,7 +51,7 @@
 
                 </div>
                 <br>
-                <div class="t2-drop table table-2">
+                <div class="t2-drop tableR table-2">
                     <h6 class="t2-drop tm-heading">Table - 2</h6>
                     <span class="t2-drop cost">Rs.0</span>
                     <span> | </span>
@@ -57,7 +59,7 @@
 
                 </div>
                 <br>
-                <div class="t3-drop table table-3">
+                <div class="t3-drop tableR table-3">
                     <h6 class="t3-drop tm-heading">Table - 3</h6>
                     <span class="t3-drop cost">Rs.0</span>
                     <span> | </span>
@@ -69,7 +71,10 @@
         </div>
 
         <div class="p-3" id="menu">
-            <h5>Menu</h5>
+            <div class="center-heading">
+                <h5>Menu</h5>
+            </div>
+
             <input id="searchbar-menu" onkeyup="search_item()" type="text" name="search" placeholder="Search items..."
                 class="menu-search">
 

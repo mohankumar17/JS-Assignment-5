@@ -17,7 +17,7 @@ body{
     box-shadow: 0 0 10px 0 #d0d0d0;
 }
 
-.table,.item{
+.tableR,.item{
     border-width: 0;
     box-shadow: 0 0 10px 0 #d0d0d0;
     height: 70px;
@@ -47,8 +47,6 @@ body{
 }
 
 .modal-footer button{
-    color: black;
-    background-color: white;
     font-size: 12px;
     font-weight: 600;
     border: 0;
@@ -72,6 +70,10 @@ body{
     color: green;
     font-weight: 700;
     display: inline-block;
+}
+
+.center-heading{
+    text-align: center;
 }
 
 @media screen and (max-width: 500px){

@@ -104,7 +104,7 @@ function search_box(inputTextElement, itemElementClass) {
 }
 
 function search_table() {
-    search_box('searchbar-table', 'table');
+    search_box('searchbar-table', 'tableR');
 }
 
 function search_item() {
@@ -135,16 +135,6 @@ function showModal(event) {
 
     //Highlight the table with colour
     let tableNum = targetClass[1];  //t1-drop -> index 1 will the table number 1.
-
-    let totUniqueItems = 0;
-    for (let eachItem in tableItems[tableNum - 1]) {
-        totUniqueItems += 1;
-    }
-
-    if (totUniqueItems === 0) {
-        alert("Add Items to the table");
-        return;
-    }
 
     //adding attribute to show the modal
     document.getElementsByClassName(targetClass)[0].setAttribute("data-toggle", "modal");
@@ -180,7 +170,7 @@ function showItemListOnModel(tableNum) {
         //console.log(eachItem);
         let itemDetail = tableItems[tableNum - 1][eachItem];
 
-        str += "<th scope = 'row' > " + (i + 1) + "</th > ";
+        str += "<th class='serial-num' scope = 'row' >" + (i + 1) + "</th > ";
         str += "<td>" + itemDetail.itemTitle + "</td>";
         str += "<td>" + itemDetail.itemPrice + "</td>";
 
@@ -217,6 +207,10 @@ function deleteItemFromTable(event) {
 
     updatePriceAndItems("t" + tableNum + "-drop");  //tables are selected as t1-drop, t2-drop, d3-drop..  
 
+    let itemSerialNum = event.target.parentNode.parentNode.rowIndex;
+
+    document.getElementsByClassName("table")[0].deleteRow(itemSerialNum);
+
     return;
 
 }
@@ -251,11 +245,17 @@ function showTotalBill(tableNum) {
     let resultStr = "<div class='output'> Total Bill for Table - " + tableNum + " is: <span> Rs. " +
         totBill[tableNum - 1] + "</span> </div>"
 
-    //resultStr += "<p> Session Closed. (<em>Please Refresh the page</em>)</p>"
+
     resultStr += "<button type='button' class='bill-gen btn btn-secondary' " +
         "onclick='generateBill(" + tableNum + ")' >Re-Generate Bill</button>";
 
+    resultStr += "<button type='button' class='btn btn-warning' " +
+        "onclick='refreshPage()' >Close Session</button>";
 
     document.getElementsByClassName("modal-footer")[0].innerHTML = resultStr;
 
+}
+
+function refreshPage(){
+    location.reload();
 }
